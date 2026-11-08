@@ -1,0 +1,782 @@
+/* =========================================================
+   ESSENZA IMÓVEIS
+   Identidade visual: tons terrosos, acolhedores e elegantes
+   ========================================================= */
+
+/* 1. Variáveis e configurações gerais */
+:root {
+  --brown: #76543f;
+  --brown-dark: #513a2d;
+  --brown-mid: #9a765b;
+  --sand: #d8c2a8;
+  --cream: #f5f0e9;
+  --paper: #fcfaf7;
+  --ink: #302923;
+  --muted: #82766d;
+  --white: #ffffff;
+  --shadow: 0 16px 45px rgba(61, 43, 31, 0.10);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1160px, 90%);
+  margin: 0 auto;
+}
+
+/* 2. Cabeçalho e navegação */
+.header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  height: 82px;
+  background: var(--paper);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--brown-dark);
+  font-family: "Playfair Display", serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid var(--brown-mid);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.brand-light {
+  color: var(--brown-mid);
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  color: #51473f;
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover,
+.text-link:hover {
+  color: var(--brown-mid);
+}
+
+.nav-cta {
+  padding: 11px 18px;
+  border: 1px solid var(--brown);
+  color: var(--brown) !important;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: none;
+  color: var(--brown);
+  font-size: 1.6rem;
+}
+
+/* 3. Botões e elementos de texto */
+.eyebrow {
+  color: #e3cbb2;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2.3px;
+}
+
+.eyebrow-brown {
+  color: var(--brown-mid);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 15px 22px;
+  border: 0;
+  cursor: pointer;
+  font: 600 0.9rem "DM Sans", sans-serif;
+  transition: 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.button-light {
+  background: #f3e8dc;
+  color: var(--brown-dark);
+}
+
+.button-brown {
+  background: var(--brown);
+  color: var(--white);
+}
+
+.text-link {
+  color: var(--brown);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* 4. Banner principal */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 590px;
+  background:
+    linear-gradient(90deg, rgba(35, 27, 22, 0.78), rgba(35, 27, 22, 0.16)),
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85")
+    center / cover;
+  color: var(--white);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  margin: 20px 0;
+  font-size: clamp(3rem, 6vw, 5.3rem);
+}
+
+.hero h1 em {
+  color: #e2c6a8;
+  font-weight: 500;
+}
+
+.hero-content p {
+  max-width: 470px;
+  margin-bottom: 30px;
+  color: #eee5dc;
+  font-size: 1.05rem;
+}
+
+.hero-note {
+  position: absolute;
+  right: 5%;
+  bottom: 28px;
+  color: #eee0d2;
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+}
+
+/* 5. Busca de imóveis */
+.search-section {
+  position: relative;
+  z-index: 2;
+  margin-top: -42px;
+}
+
+.search-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr auto;
+  align-items: end;
+  gap: 20px;
+  padding: 25px 30px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.search-panel label,
+.contact-form label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--brown-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.search-panel input,
+.search-panel select {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #e5ddd4;
+  outline: none;
+  background: var(--white);
+  color: var(--ink);
+  font: 0.88rem "DM Sans", sans-serif;
+}
+
+.search-panel input:focus,
+.search-panel select:focus {
+  border-color: var(--brown-mid);
+}
+
+/* 6. Catálogo e cards de imóveis */
+.section {
+  padding-top: 105px;
+  padding-bottom: 105px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.section-heading h2,
+.about-copy h2,
+.contact-grid h2 {
+  margin-top: 12px;
+  color: var(--brown-dark);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+}
+
+.section-heading > p {
+  max-width: 340px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.property-card {
+  background: var(--white);
+  box-shadow: 0 8px 28px rgba(61, 43, 31, 0.06);
+  transition: 0.25s;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.property-image {
+  position: relative;
+  height: 245px;
+  background-position: center;
+  background-size: cover;
+}
+
+.image-one {
+  background-image: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80");
+}
+
+.image-two {
+  background-image: url("https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=80");
+}
+
+.image-three {
+  background-image: url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80");
+}
+
+.tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 7px 11px;
+  background: var(--cream);
+  color: var(--brown-dark);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.favorite {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brown);
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.favorite.active {
+  background: var(--brown);
+  color: var(--white);
+}
+
+.property-info {
+  padding: 23px;
+}
+
+.property-type {
+  color: var(--brown-mid);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.property-info h3 {
+  margin: 9px 0;
+  font-size: 1.4rem;
+}
+
+.details {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.details i {
+  padding: 0 5px;
+  color: var(--sand);
+  font-style: normal;
+}
+
+.property-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #eee7df;
+}
+
+.property-bottom strong {
+  color: var(--brown-dark);
+  font-size: 1rem;
+}
+
+.empty-state {
+  padding: 35px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* 7. Apresentação do corretor */
+.about-section {
+  padding: 90px 0;
+  background: var(--cream);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 8%;
+}
+
+.about-photo {
+  min-height: 510px;
+  background: url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1100&q=85")
+    center / cover;
+}
+
+.about-copy h2 {
+  margin: 16px 0;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+}
+
+.about-copy > p {
+  max-width: 500px;
+  margin-bottom: 28px;
+  color: var(--muted);
+}
+
+.stats {
+  display: flex;
+  gap: 55px;
+  margin: 28px 0;
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats strong {
+  color: var(--brown);
+  font: 600 2rem "Playfair Display", serif;
+}
+
+.stats span,
+.about-copy small {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.about-copy small {
+  display: block;
+  margin-top: 20px;
+}
+
+/* 8. Serviços */
+.centered {
+  justify-content: center;
+  text-align: center;
+}
+
+.centered > div {
+  max-width: 650px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-grid article {
+  padding: 30px;
+  border: 1px solid #e8dfd5;
+  background: var(--white);
+}
+
+.service-number {
+  color: var(--brown-mid);
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+}
+
+.service-grid h3 {
+  margin: 20px 0 10px;
+  color: var(--brown-dark);
+  font-size: 1.6rem;
+}
+
+.service-grid p {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+/* 9. Contato direto pelo WhatsApp */
+.contact-section {
+  padding: 90px 0;
+  background: var(--brown-dark);
+  color: var(--white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 10%;
+}
+
+.contact-grid h2 {
+  margin: 15px 0;
+  color: var(--white);
+}
+
+.contact-grid > div > p {
+  max-width: 440px;
+  margin-bottom: 30px;
+  color: #d8c9bd;
+}
+
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  margin-top: 17px;
+}
+
+.contact-detail span {
+  color: #c5b2a3;
+  font-size: 0.72rem;
+}
+
+.contact-detail strong {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.whatsapp-card {
+  padding: 38px;
+  background: var(--paper);
+  color: var(--ink);
+  text-align: center;
+}
+
+.whatsapp-icon {
+  display: inline-grid;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 18px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e3efe5;
+  color: #218c4b;
+  font-size: 1.8rem;
+}
+
+.whatsapp-card h3 {
+  margin-bottom: 12px;
+  color: var(--brown-dark);
+  font-size: 1.7rem;
+}
+
+.whatsapp-card p {
+  margin-bottom: 22px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.button-whatsapp {
+  background: #218c4b;
+  color: var(--white);
+}
+
+.whatsapp-card small {
+  display: block;
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.whatsapp-float {
+  position: fixed;
+  z-index: 10;
+  right: 24px;
+  bottom: 24px;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border-radius: 50%;
+  background: #218c4b;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+  color: var(--white);
+  font-size: 1.8rem;
+  transition: 0.2s;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px);
+}
+
+/* 10. Rodapé */
+.footer {
+  padding: 25px 0;
+  background: #38281f;
+  color: #d7c8bc;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand-footer {
+  color: #f3e8dc;
+  font-size: 1.2rem;
+}
+
+.brand-footer .brand-mark {
+  border-color: #b89a7d;
+}
+
+.footer p,
+.footer > a {
+  font-size: 0.72rem;
+}
+
+.footer-content > a:last-child {
+  color: #e2c6a8;
+  font-size: 0.75rem;
+}
+
+/* 11. Responsividade: tablets */
+@media (max-width: 850px) {
+  .nav-links {
+    gap: 18px;
+  }
+
+  .search-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-panel .button {
+    width: 100%;
+  }
+
+  .property-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-grid {
+    gap: 5%;
+  }
+
+  .about-photo {
+    min-height: 430px;
+  }
+
+  .contact-grid {
+    gap: 5%;
+  }
+}
+
+/* 12. Responsividade: celulares */
+@media (max-width: 650px) {
+  .header {
+    height: 70px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    padding: 20px 5%;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-cta {
+    text-align: center;
+  }
+
+  .hero {
+    height: 550px;
+    background-position: 58% center;
+  }
+
+  .hero-note {
+    right: auto;
+    left: 5%;
+    font-size: 0.5rem;
+  }
+
+  .search-section {
+    margin-top: 0;
+    padding: 20px 0;
+    background: var(--cream);
+  }
+
+  .search-panel {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    padding: 20px;
+  }
+
+  .section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading > p {
+    margin-top: 14px;
+  }
+
+  .property-grid,
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .property-image {
+    height: 250px;
+  }
+
+  .about-section,
+  .contact-section {
+    padding: 65px 0;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about-photo {
+    order: 2;
+    min-height: 300px;
+  }
+
+  .about-copy {
+    order: 1;
+  }
+
+  .stats {
+    gap: 35px;
+  }
+
+  .whatsapp-card {
+    padding: 28px 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-content p {
+    order: 3;
+  }
+
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 52px;
+    height: 52px;
+  }
+}
